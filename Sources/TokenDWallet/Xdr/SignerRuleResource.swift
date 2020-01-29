@@ -165,7 +165,7 @@ import Foundation
 public enum SignerRuleResource: XDRDiscriminatedUnion {
   case reviewableRequest(SignerRuleResourceReviewableRequest)
   case asset(SignerRuleResourceAsset)
-  case any()
+  case any
   case offerEntry(SignerRuleResourceOffer)
   case sale(SignerRuleResourceSale)
   case atomicSwapAsk(SignerRuleResourceAtomicSwapAsk)
@@ -205,7 +205,7 @@ public enum SignerRuleResource: XDRDiscriminatedUnion {
     switch self {
     case .reviewableRequest(let data): xdr.append(data.toXDR())
     case .asset(let data): xdr.append(data.toXDR())
-    case .any(): xdr.append(Data())
+    case .any: xdr.append(Data())
     case .offerEntry(let data): xdr.append(data.toXDR())
     case .sale(let data): xdr.append(data.toXDR())
     case .atomicSwapAsk(let data): xdr.append(data.toXDR())
@@ -534,7 +534,7 @@ public enum SignerRuleResource: XDRDiscriminatedUnion {
 
   }
   public enum SignerRuleResourceAccountSpecificRuleExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
     case addAccSpecificRuleResource(SignerRuleResourceAccountSpecificRuleExtAccountSpecificRule)
 
     public var discriminant: Int32 {
@@ -550,7 +550,7 @@ public enum SignerRuleResource: XDRDiscriminatedUnion {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       case .addAccSpecificRuleResource(let data): xdr.append(data.toXDR())
       }
 

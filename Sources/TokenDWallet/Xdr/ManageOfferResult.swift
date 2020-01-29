@@ -87,7 +87,7 @@ public enum ManageOfferResult: XDRDiscriminatedUnion {
     }
 
     public enum ManageOfferResultPhysicalPriceRestrictionExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -101,7 +101,7 @@ public enum ManageOfferResult: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -131,7 +131,7 @@ public enum ManageOfferResult: XDRDiscriminatedUnion {
     }
 
     public enum ManageOfferResultCurrentPriceRestrictionExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -145,7 +145,7 @@ public enum ManageOfferResult: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr

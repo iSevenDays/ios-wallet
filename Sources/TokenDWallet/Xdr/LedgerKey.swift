@@ -435,7 +435,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyAccountExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -449,7 +449,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -483,7 +483,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeySignerExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -497,7 +497,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -535,7 +535,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyFeeStateExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -549,7 +549,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -579,7 +579,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyBalanceExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -593,7 +593,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -623,7 +623,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyAssetExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -637,7 +637,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -671,7 +671,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyReferenceExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -685,7 +685,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -715,7 +715,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyStatsExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -729,7 +729,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -759,7 +759,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyAccountLimitsExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -773,7 +773,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -807,7 +807,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyAssetPairExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -821,7 +821,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -873,7 +873,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyReviewableRequestExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -887,7 +887,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -921,7 +921,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyExternalSystemAccountIDExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -935,7 +935,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -965,7 +965,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeySaleExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -979,7 +979,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1009,7 +1009,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyKeyValueExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1023,7 +1023,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1053,7 +1053,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyAccountKYCExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1067,7 +1067,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1097,7 +1097,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyExternalSystemAccountIDPoolEntryExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1111,7 +1111,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1141,7 +1141,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyLimitsV2Ext: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1155,7 +1155,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1185,7 +1185,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyStatisticsV2Ext: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1199,7 +1199,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1233,7 +1233,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyPendingStatisticsExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1247,7 +1247,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1277,7 +1277,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyContractExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1291,7 +1291,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1321,7 +1321,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyAtomicSwapAskExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1335,7 +1335,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1365,7 +1365,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyAccountRoleExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1379,7 +1379,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1409,7 +1409,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyAccountRuleExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1423,7 +1423,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1453,7 +1453,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeySignerRoleExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1467,7 +1467,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1497,7 +1497,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeySignerRuleExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1511,7 +1511,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1545,7 +1545,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyStampExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1559,7 +1559,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr
@@ -1589,7 +1589,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
     }
 
     public enum LedgerKeyLicenseExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -1603,7 +1603,7 @@ public enum LedgerKey: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr

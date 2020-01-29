@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = 'TokenDWallet'
-  s.version          = '3.0.5'
+  s.version          = '3.0.6'
   s.summary          = 'Wallet utilities for TokenD.'
   s.homepage         = 'https://github.com/tokend/ios-wallet'
   s.license          = { type: 'Apache License, Version 2.0', file: 'LICENSE' }
-  s.author           = { 'Distributed Lab' => 'dev@distributedlab.com' }
+  s.author           = { 'Distributed Lab' => 'dev@distributedlab.com', 'Anton Sokolchenko (Swift 5 conversion)' => 'wsevendays@gmail.com' }
   s.source           = { git: 'https://github.com/tokend/ios-wallet.git', tag: s.version.to_s }
   s.swift_version    = '4.2'
   s.source_files     = 'Sources/TokenDWallet/**/*.swift'

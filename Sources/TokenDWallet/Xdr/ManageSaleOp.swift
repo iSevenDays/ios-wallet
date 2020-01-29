@@ -54,7 +54,7 @@ public struct ManageSaleOp: XDREncodable {
 
   public enum ManageSaleOpData: XDRDiscriminatedUnion {
     case createUpdateDetailsRequest(UpdateSaleDetailsData)
-    case cancel()
+    case cancel
 
     public var discriminant: Int32 {
       switch self {
@@ -70,7 +70,7 @@ public struct ManageSaleOp: XDREncodable {
 
       switch self {
       case .createUpdateDetailsRequest(let data): xdr.append(data.toXDR())
-      case .cancel(): xdr.append(Data())
+      case .cancel: xdr.append(Data())
       }
 
       return xdr
@@ -78,7 +78,7 @@ public struct ManageSaleOp: XDREncodable {
 
   }
   public enum ManageSaleOpExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -92,7 +92,7 @@ public struct ManageSaleOp: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

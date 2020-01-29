@@ -73,7 +73,7 @@ public enum ManageContractRequestResult: XDRDiscriminatedUnion {
 
     public enum ManageContractRequestResultSuccessDetails: XDRDiscriminatedUnion {
       case create(CreateContractRequestResponse)
-      case remove()
+      case remove
 
       public var discriminant: Int32 {
         switch self {
@@ -89,7 +89,7 @@ public enum ManageContractRequestResult: XDRDiscriminatedUnion {
 
         switch self {
         case .create(let data): xdr.append(data.toXDR())
-        case .remove(): xdr.append(Data())
+        case .remove: xdr.append(Data())
         }
 
         return xdr
@@ -97,7 +97,7 @@ public enum ManageContractRequestResult: XDRDiscriminatedUnion {
 
     }
     public enum ManageContractRequestResultSuccessExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -111,7 +111,7 @@ public enum ManageContractRequestResult: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr

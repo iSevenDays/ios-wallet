@@ -59,7 +59,7 @@ public struct ManageKeyValueOp: XDREncodable {
 
   public enum ManageKeyValueOpAction: XDRDiscriminatedUnion {
     case put(KeyValueEntryValue)
-    case remove()
+    case remove
 
     public var discriminant: Int32 {
       switch self {
@@ -75,7 +75,7 @@ public struct ManageKeyValueOp: XDREncodable {
 
       switch self {
       case .put(let data): xdr.append(data.toXDR())
-      case .remove(): xdr.append(Data())
+      case .remove: xdr.append(Data())
       }
 
       return xdr
@@ -83,7 +83,7 @@ public struct ManageKeyValueOp: XDREncodable {
 
   }
   public enum ManageKeyValueOpExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -97,7 +97,7 @@ public struct ManageKeyValueOp: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

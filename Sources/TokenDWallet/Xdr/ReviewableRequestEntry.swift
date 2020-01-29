@@ -182,7 +182,7 @@ public struct ReviewableRequestEntry: XDREncodable {
 
   }
   public enum ReviewableRequestEntryExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -196,7 +196,7 @@ public struct ReviewableRequestEntry: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

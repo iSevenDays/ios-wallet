@@ -113,8 +113,8 @@ public struct SaleEntry: XDREncodable {
   }
 
   public enum SaleEntryExt: XDRDiscriminatedUnion {
-    case emptyVersion()
-    case addSaleWhitelists()
+    case emptyVersion
+    case addSaleWhitelists
 
     public var discriminant: Int32 {
       switch self {
@@ -129,8 +129,8 @@ public struct SaleEntry: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
-      case .addSaleWhitelists(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
+      case .addSaleWhitelists: xdr.append(Data())
       }
 
       return xdr

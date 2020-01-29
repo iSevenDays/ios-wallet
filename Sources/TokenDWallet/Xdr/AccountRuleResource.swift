@@ -134,7 +134,7 @@ import Foundation
 public enum AccountRuleResource: XDRDiscriminatedUnion {
   case asset(AccountRuleResourceAsset)
   case reviewableRequest(AccountRuleResourceReviewableRequest)
-  case any()
+  case any
   case offerEntry(AccountRuleResourceOffer)
   case sale(AccountRuleResourceSale)
   case atomicSwapAsk(AccountRuleResourceAtomicSwapAsk)
@@ -168,7 +168,7 @@ public enum AccountRuleResource: XDRDiscriminatedUnion {
     switch self {
     case .asset(let data): xdr.append(data.toXDR())
     case .reviewableRequest(let data): xdr.append(data.toXDR())
-    case .any(): xdr.append(Data())
+    case .any: xdr.append(Data())
     case .offerEntry(let data): xdr.append(data.toXDR())
     case .sale(let data): xdr.append(data.toXDR())
     case .atomicSwapAsk(let data): xdr.append(data.toXDR())
@@ -416,7 +416,7 @@ public enum AccountRuleResource: XDRDiscriminatedUnion {
 
   }
   public enum AccountRuleResourceAccountSpecificRuleExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
     case addAccSpecificRuleResource(AccountRuleResourceAccountSpecificRuleExtAccountSpecificRule)
 
     public var discriminant: Int32 {
@@ -432,7 +432,7 @@ public enum AccountRuleResource: XDRDiscriminatedUnion {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       case .addAccSpecificRuleResource(let data): xdr.append(data.toXDR())
       }
 

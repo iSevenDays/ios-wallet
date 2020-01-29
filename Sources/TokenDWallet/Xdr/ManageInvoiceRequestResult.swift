@@ -78,7 +78,7 @@ public enum ManageInvoiceRequestResult: XDRDiscriminatedUnion {
 
     public enum ManageInvoiceRequestResultSuccessDetails: XDRDiscriminatedUnion {
       case create(CreateInvoiceRequestResponse)
-      case remove()
+      case remove
 
       public var discriminant: Int32 {
         switch self {
@@ -94,7 +94,7 @@ public enum ManageInvoiceRequestResult: XDRDiscriminatedUnion {
 
         switch self {
         case .create(let data): xdr.append(data.toXDR())
-        case .remove(): xdr.append(Data())
+        case .remove: xdr.append(Data())
         }
 
         return xdr
@@ -102,7 +102,7 @@ public enum ManageInvoiceRequestResult: XDRDiscriminatedUnion {
 
     }
     public enum ManageInvoiceRequestResultSuccessExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -116,7 +116,7 @@ public enum ManageInvoiceRequestResult: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr

@@ -56,7 +56,7 @@ public struct ASwapBidCreationRequest: XDREncodable {
   }
 
   public enum ASwapBidCreationRequestExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -70,7 +70,7 @@ public struct ASwapBidCreationRequest: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

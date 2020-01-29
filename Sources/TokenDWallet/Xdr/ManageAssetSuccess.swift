@@ -48,7 +48,7 @@ public struct ManageAssetSuccess: XDREncodable {
   }
 
   public enum ManageAssetSuccessExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -62,7 +62,7 @@ public struct ManageAssetSuccess: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

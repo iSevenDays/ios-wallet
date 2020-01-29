@@ -53,7 +53,7 @@ public struct AccountRoleEntry: XDREncodable {
   }
 
   public enum AccountRoleEntryExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -67,7 +67,7 @@ public struct AccountRoleEntry: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

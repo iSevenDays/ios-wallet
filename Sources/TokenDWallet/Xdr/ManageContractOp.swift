@@ -59,7 +59,7 @@ public struct ManageContractOp: XDREncodable {
 
   public enum ManageContractOpData: XDRDiscriminatedUnion {
     case addDetails(Longstring)
-    case confirmCompleted()
+    case confirmCompleted
     case startDispute(Longstring)
     case resolveDispute(Bool)
 
@@ -79,7 +79,7 @@ public struct ManageContractOp: XDREncodable {
 
       switch self {
       case .addDetails(let data): xdr.append(data.toXDR())
-      case .confirmCompleted(): xdr.append(Data())
+      case .confirmCompleted: xdr.append(Data())
       case .startDispute(let data): xdr.append(data.toXDR())
       case .resolveDispute(let data): xdr.append(data.toXDR())
       }
@@ -89,7 +89,7 @@ public struct ManageContractOp: XDREncodable {
 
   }
   public enum ManageContractOpExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -103,7 +103,7 @@ public struct ManageContractOp: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

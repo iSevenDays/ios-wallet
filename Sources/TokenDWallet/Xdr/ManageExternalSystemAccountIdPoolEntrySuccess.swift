@@ -43,7 +43,7 @@ public struct ManageExternalSystemAccountIdPoolEntrySuccess: XDREncodable {
   }
 
   public enum ManageExternalSystemAccountIdPoolEntrySuccessExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -57,7 +57,7 @@ public struct ManageExternalSystemAccountIdPoolEntrySuccess: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

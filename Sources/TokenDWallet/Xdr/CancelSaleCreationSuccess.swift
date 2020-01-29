@@ -36,7 +36,7 @@ public struct CancelSaleCreationSuccess: XDREncodable {
   }
 
   public enum CancelSaleCreationSuccessExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -50,7 +50,7 @@ public struct CancelSaleCreationSuccess: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

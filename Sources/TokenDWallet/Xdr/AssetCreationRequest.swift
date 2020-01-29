@@ -90,7 +90,7 @@ public struct AssetCreationRequest: XDREncodable {
   }
 
   public enum AssetCreationRequestExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -104,7 +104,7 @@ public struct AssetCreationRequest: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

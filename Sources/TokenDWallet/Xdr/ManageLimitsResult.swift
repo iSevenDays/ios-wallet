@@ -76,7 +76,7 @@ public enum ManageLimitsResult: XDRDiscriminatedUnion {
 
     public enum ManageLimitsResultSuccessDetails: XDRDiscriminatedUnion {
       case create(Uint64)
-      case remove()
+      case remove
 
       public var discriminant: Int32 {
         switch self {
@@ -92,7 +92,7 @@ public enum ManageLimitsResult: XDRDiscriminatedUnion {
 
         switch self {
         case .create(let data): xdr.append(data.toXDR())
-        case .remove(): xdr.append(Data())
+        case .remove: xdr.append(Data())
         }
 
         return xdr
@@ -100,7 +100,7 @@ public enum ManageLimitsResult: XDRDiscriminatedUnion {
 
     }
     public enum ManageLimitsResultSuccessExt: XDRDiscriminatedUnion {
-      case emptyVersion()
+      case emptyVersion
 
       public var discriminant: Int32 {
         switch self {
@@ -114,7 +114,7 @@ public enum ManageLimitsResult: XDRDiscriminatedUnion {
         xdr.append(self.discriminant.toXDR())
 
         switch self {
-        case .emptyVersion(): xdr.append(Data())
+        case .emptyVersion: xdr.append(Data())
         }
 
         return xdr

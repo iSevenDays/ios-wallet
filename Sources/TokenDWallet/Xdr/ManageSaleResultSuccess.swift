@@ -56,7 +56,7 @@ public struct ManageSaleResultSuccess: XDREncodable {
 
   public enum ManageSaleResultSuccessResponse: XDRDiscriminatedUnion {
     case createUpdateDetailsRequest(Uint64)
-    case cancel()
+    case cancel
 
     public var discriminant: Int32 {
       switch self {
@@ -72,7 +72,7 @@ public struct ManageSaleResultSuccess: XDREncodable {
 
       switch self {
       case .createUpdateDetailsRequest(let data): xdr.append(data.toXDR())
-      case .cancel(): xdr.append(Data())
+      case .cancel: xdr.append(Data())
       }
 
       return xdr
@@ -80,7 +80,7 @@ public struct ManageSaleResultSuccess: XDREncodable {
 
   }
   public enum ManageSaleResultSuccessExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -94,7 +94,7 @@ public struct ManageSaleResultSuccess: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

@@ -45,7 +45,7 @@ public struct CancelChangeRoleRequestOp: XDREncodable {
   }
 
   public enum CancelChangeRoleRequestOpExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -59,7 +59,7 @@ public struct CancelChangeRoleRequestOp: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

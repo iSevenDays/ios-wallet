@@ -50,7 +50,7 @@ public struct ManageCreatePollRequestSuccessResult: XDREncodable {
 
   public enum ManageCreatePollRequestSuccessResultDetails: XDRDiscriminatedUnion {
     case create(CreatePollRequestResponse)
-    case cancel()
+    case cancel
 
     public var discriminant: Int32 {
       switch self {
@@ -66,7 +66,7 @@ public struct ManageCreatePollRequestSuccessResult: XDREncodable {
 
       switch self {
       case .create(let data): xdr.append(data.toXDR())
-      case .cancel(): xdr.append(Data())
+      case .cancel: xdr.append(Data())
       }
 
       return xdr
@@ -74,7 +74,7 @@ public struct ManageCreatePollRequestSuccessResult: XDREncodable {
 
   }
   public enum ManageCreatePollRequestSuccessResultExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -88,7 +88,7 @@ public struct ManageCreatePollRequestSuccessResult: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

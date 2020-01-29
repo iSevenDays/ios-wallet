@@ -60,7 +60,7 @@ public struct ExtendedResult: XDREncodable {
 
   public enum ExtendedResultTypeExt: XDRDiscriminatedUnion {
     case createSale(SaleExtended)
-    case none()
+    case none
     case createAtomicSwapBid(AtomicSwapBidExtended)
     case createAtomicSwapAsk(AtomicSwapAskExtended)
     case createPoll(CreatePollExtended)
@@ -82,7 +82,7 @@ public struct ExtendedResult: XDREncodable {
 
       switch self {
       case .createSale(let data): xdr.append(data.toXDR())
-      case .none(): xdr.append(Data())
+      case .none: xdr.append(Data())
       case .createAtomicSwapBid(let data): xdr.append(data.toXDR())
       case .createAtomicSwapAsk(let data): xdr.append(data.toXDR())
       case .createPoll(let data): xdr.append(data.toXDR())
@@ -93,7 +93,7 @@ public struct ExtendedResult: XDREncodable {
 
   }
   public enum ExtendedResultExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -107,7 +107,7 @@ public struct ExtendedResult: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr

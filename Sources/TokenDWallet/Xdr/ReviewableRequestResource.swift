@@ -205,7 +205,7 @@ public enum ReviewableRequestResource: XDRDiscriminatedUnion {
 
   }
   public enum ReviewableRequestResourceCreateAtomicSwapAskExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
     case atomicSwapReturning(ReviewableRequestResourceCreateAtomicSwapAskExtCreateAtomicSwapAsk)
 
     public var discriminant: Int32 {
@@ -221,7 +221,7 @@ public enum ReviewableRequestResource: XDRDiscriminatedUnion {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       case .atomicSwapReturning(let data): xdr.append(data.toXDR())
       }
 
@@ -256,7 +256,7 @@ public enum ReviewableRequestResource: XDRDiscriminatedUnion {
     }
   }
   public enum ReviewableRequestResourceCreateAtomicSwapBidExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
     case atomicSwapReturning(ReviewableRequestResourceCreateAtomicSwapBidExtCreateAtomicSwapBid)
 
     public var discriminant: Int32 {
@@ -272,7 +272,7 @@ public enum ReviewableRequestResource: XDRDiscriminatedUnion {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       case .atomicSwapReturning(let data): xdr.append(data.toXDR())
       }
 

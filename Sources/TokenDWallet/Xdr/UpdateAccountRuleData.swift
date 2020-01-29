@@ -66,7 +66,7 @@ public struct UpdateAccountRuleData: XDREncodable {
   }
 
   public enum UpdateAccountRuleDataExt: XDRDiscriminatedUnion {
-    case emptyVersion()
+    case emptyVersion
 
     public var discriminant: Int32 {
       switch self {
@@ -80,7 +80,7 @@ public struct UpdateAccountRuleData: XDREncodable {
       xdr.append(self.discriminant.toXDR())
 
       switch self {
-      case .emptyVersion(): xdr.append(Data())
+      case .emptyVersion: xdr.append(Data())
       }
 
       return xdr
